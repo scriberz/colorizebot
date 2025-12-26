@@ -1,0 +1,35 @@
+D:\capital\projects\colorizebot\venv\Lib\site-packages\apscheduler\__init__.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import get_distribution, DistributionNotFound
+Traceback (most recent call last):
+  File "D:\capital\projects\colorizebot\bot.py", line 63, in main
+    application = Application.builder().token(config.TOKEN).build()
+                  ~~~~~~~~~~~~~~~~~~~^^
+  File "D:\capital\projects\colorizebot\venv\Lib\site-packages\telegram\ext\_application.py", line 462, in builder
+    return ApplicationBuilder()
+  File "D:\capital\projects\colorizebot\venv\Lib\site-packages\telegram\ext\_applicationbuilder.py", line 206, in __init__
+    self._job_queue: ODVInput[JobQueue] = DefaultValue(JobQueue())
+                                                       ~~~~~~~~^^
+  File "D:\capital\projects\colorizebot\venv\Lib\site-packages\telegram\ext\_jobqueue.py", line 113, in __init__
+    self.scheduler: "AsyncIOScheduler" = AsyncIOScheduler(  # noqa: UP037
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+        **self.scheduler_configuration
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\capital\projects\colorizebot\venv\Lib\site-packages\apscheduler\schedulers\base.py", line 87, in __init__
+    self.configure(gconfig, **options)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "D:\capital\projects\colorizebot\venv\Lib\site-packages\apscheduler\schedulers\base.py", line 126, in configure
+    self._configure(config)
+    ~~~~~~~~~~~~~~~^^^^^^^^
+  File "D:\capital\projects\colorizebot\venv\Lib\site-packages\apscheduler\schedulers\asyncio.py", line 48, in _configure
+    super(AsyncIOScheduler, self)._configure(config)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "D:\capital\projects\colorizebot\venv\Lib\site-packages\apscheduler\schedulers\base.py", line 697, in _configure
+    self.timezone = astimezone(config.pop('timezone', None)) or get_localzone()
+                    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\capital\projects\colorizebot\bot.py", line 10, in _patched_astimezone
+    return _original_astimezone(obj)
+  File "D:\capital\projects\colorizebot\venv\Lib\site-packages\apscheduler\util.py", line 93, in astimezone
+    raise TypeError('Only timezones from the pytz library are supported')
+TypeError: Only timezones from the pytz library are supported

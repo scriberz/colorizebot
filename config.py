@@ -1,1 +1,7 @@
-TOKEN = 'YOUR_BOT_TOKEN'  # Замените на токен вашего бота
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+TOKEN = os.getenv('TOKEN', '')
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', '')
